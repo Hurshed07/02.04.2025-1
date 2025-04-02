@@ -198,3 +198,14 @@ int main()
     TaskManagerUI ui(repository);
     ui.run();
 }
+//Объяснение выбора принципов
+//Single Responsibility Principle (SRP):
+//Класс ITaskRepository отвечает только за хранение задач.
+//Класс TaskManagerUI отвечает только за взаимодействие с пользователем.
+//Это упрощает тестирование и поддержку кода.
+//Open/Closed Principle (OCP):
+//Мы можем добавить новую реализацию репозитория (например, FileTaskRepository) без изменения существующего кода.
+//Приложение остается открытым для расширения, но закрытым для модификации.
+//Dependency Inversion Principle (DIP):
+//Интерфейс ITaskRepository отделяет высокоуровневый код (TaskManagerUI) от низкоуровневых деталей реализации (InMemoryTaskRepository, FileTaskRepository).
+//Это позволяет легко менять способ хранения задач, например, с памяти на файл или базу данных.
